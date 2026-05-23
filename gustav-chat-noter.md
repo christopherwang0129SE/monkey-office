@@ -52,3 +52,57 @@ style. No text, no logos.
 ## Status
 
 Ingen kode ændret. Ingen filer skrevet udover denne note. Næste handling = generer billeder med nano banana.
+
+---
+
+# Chat-noter — 2026-05-23 (session 2: business research, USP, sales strategy)
+
+Anden chat-session samme dag. Fokus: forretnings-research, USP-formulering, og sales-strategi for noise-monkey produktet.
+
+## Hvad denne session producerede (4 docs, nu i dette repo)
+
+1. **`2026-05-23-product-plan.md`** — Fase 1/2 skelet med låst produkt-definition (3D-printet desk-abe, dækker munden ved dB-tærskel).
+2. **`2026-05-23-noise-monkey-research.md`** — 13-sektion dyb business outcome research med ~25 kilder. Fem hovedtal:
+   - 66 % produktivitetstab ved én overhørt samtale (Banbury & Berry 2005)
+   - 86 min/dag tabt i åbent kontor (Steelcase × IPSOS, 10 500 medarbejdere)
+   - 23 min 15 s refokus efter afbrydelse (Gloria Mark, UC Irvine)
+   - 35 % tilfredse med kontor-støj (Leesman 2024-25)
+   - Distraktion = 93,6 % af årligt produktivitetstab — 15× mere end sygefravær
+3. **`2026-05-23-noise-monkey-killer-usps-deck.md`** — 9-slide præsentations-pakke med 5 rangerede USP'er:
+   - 🥇 "Shush'en ingen tager personligt" (moaten)
+   - 🥈 ROI-tabel: €26-325k/år tabt afhængig af team-størrelse
+   - 🥉 ESG-rapport-bevis (WELL v2 + ISO 45003)
+   - Zoom-kald-kvalitet
+   - Kontorets talisman
+4. **`2026-05-23-noise-monkey-sales-strategy.md`** — 12-ugers 0-til-30-betalende-kunder plan. Demo-først strategi: aben sælger sig selv på et bord i 60 sek. Kanaler rangeret (walk-in > cold-call > LinkedIn > Product Hunt). 3-tier pricing (€99/€499/€999) med 30-dages risk-free pilot som universal close.
+
+## Centrale beslutninger der venter (denne uge)
+
+- [ ] Target-segment for uge 3-6 (anbefalet: KBH tech/scale-up 50-200 ansatte)
+- [ ] Hardware-leverandør: selv-print vs. Sculpteo/Shapeways for første 30 units
+- [ ] Pris-anchor i pitch: €99 vs. €499 (anbefalet: €499 office pack — under godkendelses-grænse)
+- [ ] Landing-page placering: agent360.dk/aben vs. separat domæne
+- [ ] Benjamins rolle — cold-call ejerskab eller Gustav solo
+
+## Åbne spørgsmål denne session ikke løste
+
+- **Verifikation af de fem hovedtal mod primær-kilder** — research er web-summary-baseret. Skal bekræftes inden kunde-decks. **Benjamins research-task (jf. product-plan.md) er ikke landet i nogen repo endnu** — nul commits fra ham per 2026-05-23.
+- **Navn til aben** — Hush Monkey / Quiet Ape / Shhmpanzee / MonkeyMute. Test mod første 5 kontor-chefer.
+- **Kulturel fit af "hænder-over-mund" gesten** i DE/FR/US/JP — overlap med session-1 spørgsmål (visuel design).
+- **Hardware BOM** — vi gætter €15-35/unit; ikke verificeret med prototype endnu.
+
+## Hvor vi ER (status ved session-slut)
+
+- ✅ Forretnings-research, USP, sales-strategi: dokumenteret
+- ❌ Prototype: nul aber bygget
+- ❌ Kunde: nul betalende, nul piloter
+- ❌ Landing-page: eksisterer ikke
+- ❌ Benjamin: nul input
+
+Det er **dag 0** af 12-ugers planen. Næste konkrete valg:
+- **A)** Byg hardware (5 aber, 7 dage) → walk-in mandag uge 2
+- **B)** Valider købsvilje med 20 cold-calls FØR vi bygger hardware (anbefalet — sparer €500-1500 hvis pitch er forkert)
+
+## Status
+
+Alle 4 docs committet i `agent360-jesperai/agent360/docs/planning/` (commits 944dc9fb9 → a65d17f52, branch `new-website-branch`). Nu også kopieret til dette repo på `gustav-chat-noter` branch.
