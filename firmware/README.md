@@ -4,7 +4,8 @@
 
 ## File
 
-- [`tys-aben.ino`](tys-aben.ino) — single-file sketch, ~200 lines.
+- [`tys-aben/tys-aben.ino`](tys-aben/tys-aben.ino) — single-file sketch, ~200 lines.
+- **Compile-tested ✓** with arduino-cli + ESP32 Arduino core 3.3.8 (`esp32:esp32:esp32c3`). Program 312 KB (24% of 1.3 MB flash), RAM 15 KB (4% of 320 KB).
 
 ## Hardware connections
 
@@ -26,7 +27,7 @@ ESP32 board variant.
 2. Add ESP32 board support: File → Preferences → Additional Boards
    Manager URLs → add `https://espressif.github.io/arduino-esp32/package_esp32_index.json`
 3. Tools → Board → ESP32 Arduino → select your specific board.
-4. Open [`tys-aben.ino`](tys-aben.ino).
+4. Open [`tys-aben/tys-aben.ino`](tys-aben/tys-aben.ino).
 5. Adjust pins + tuning constants if needed.
 6. Tools → Port → select your USB-C-connected board.
 7. Upload (arrow icon in toolbar).

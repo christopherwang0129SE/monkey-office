@@ -36,9 +36,8 @@
 #define I2S_SD      32   // serial data (DOUT)
 #define I2S_PORT    I2S_NUM_0
 
-// Servo control
+// Servo control (ESP32 Arduino 3.x LEDC API — pin-based, not channel-based)
 #define SERVO_PIN          18
-#define SERVO_PWM_CHANNEL  0
 #define SERVO_PWM_FREQ     50      // 50 Hz standard hobby servo
 #define SERVO_PWM_BITS     14      // 14-bit resolution → fine-grained motion
 // SG90 pulse range: 500 µs (0°) to 2500 µs (180°), neutral 1500 µs.
@@ -138,9 +137,12 @@ float read_db_ish() {
 //  SERVO
 // =====================================================================
 
+// Forward declaration so servo_init() can call servo_write_us()
+void servo_write_us(float us);
+
 void servo_init() {
-  ledcSetup(SERVO_PWM_CHANNEL, SERVO_PWM_FREQ, SERVO_PWM_BITS);
-  ledcAttachPin(SERVO_PIN, SERVO_PWM_CHANNEL);
+  // ESP32 Arduino 3.x LEDC API: ledcAttach(pin, freq, bits) — pin-based.
+  ledcAttach(SERVO_PIN, SERVO_PWM_FREQ, SERVO_PWM_BITS);
   servo_write_us(SERVO_REST_US);
 }
 
@@ -149,7 +151,7 @@ void servo_write_us(float us) {
   // duty (in PWM ticks) = us / period_us * 2^bits
   // period = 1e6/50 = 20000 µs; 2^14 = 16384
   uint32_t duty = (uint32_t)(us * 16384.0 / 20000.0);
-  ledcWrite(SERVO_PWM_CHANNEL, duty);
+  ledcWrite(SERVO_PIN, duty);
 }
 
 // Cosine ease in/out — 0..1 maps to 0..1, but with smooth ends.

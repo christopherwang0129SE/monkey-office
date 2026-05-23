@@ -20,9 +20,14 @@
 part = "preview";   // "preview" | "hub_box" | "hub_lid"
 
 // ---------- OUTER ENVELOPE ----------
-hub_w              = 70;       // X — width (matches motherboard width + walls + margin)
-hub_l              = 145;      // Y — length (motherboard 120 mm + margin)
-hub_h              = 24;       // Z — height (motherboard 7 mm thick + DC motor laid flat 19 mm + margin)
+// Sized for 60 × 120 mm motherboard + tolerance safety. Interior
+// dimensions after 2.5 mm walls: (hub_w - 5) × (hub_l - 5) × hub_h.
+// Motherboard footprint 60 × 120 → interior 70 × 150 gives ≥5 mm
+// margin on every side (was tight at 2.5 mm — bumped to absorb
+// 0.3 mm print tolerance + warping).
+hub_w              = 75;       // X — width (motherboard 60 + walls + safety margin)
+hub_l              = 150;      // Y — length (motherboard 120 + walls + safety margin)
+hub_h              = 24;       // Z — height (motherboard 7 mm thick + USB-C connector + margin)
 wall_t             = 2.5;
 corner_r           = 6;
 fit_loose          = 0.4;
