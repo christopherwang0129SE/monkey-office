@@ -38,9 +38,11 @@ shoulder_z         = leg_h + foot_h + torso_h*0.85;  // ~177
 torso_center_z     = leg_h + foot_h + torso_h/2;     // ~118
 head_center_z      = leg_h + foot_h + torso_h + head_h/2 - 8; // overlap for neck
 
-// ---------- BASE DISC ----------
-base_d             = 95;                       // wider than monkey for stability
+// ---------- BASE PLATE (rectangular) ----------
+base_w             = 150;                      // rectangular base — wide axis (X, left-right)
+base_l             = 50;                       // rectangular base — depth (Y, front-back)
 base_h             = 14;
+base_corner_r      = 8;                        // rounded corner radius
 base_foot_recess   = 4;
 base_usb_notch_w   = 10;
 base_usb_notch_h   = 5;
@@ -62,8 +64,19 @@ fit_tight          = 0.2;
 sg90_body_l        = 23.0;
 sg90_body_w        = 12.2;
 sg90_body_h        = 22.5;
-esp_w              = 28;
-esp_l              = 65;
+// ---------- COMPONENTS (matched to STLs in hardware/components/) ----------
+// MCU: ESP32-C3 Super Mini (smaller form factor than DevKitC — fits both variants)
+esp_w              = 22;
+esp_l              = 18;
+esp_h              = 8;
+// I2S mic board (matches hardware/components/microphone.stl)
+mic_w              = 40;
+mic_d              = 11;
+mic_h              = 20;
+// USB-C breakout (matches hardware/components/usbc.stl)
+usbc_w             = 20;
+usbc_d             = 10;
+usbc_h             = 20;
 shoulder_pin_d     = 3.2;
 tendon_ch_d        = 2.4;
 
@@ -323,26 +336,23 @@ module leg(side=1) {
 module base_disc() {
     foot_recess_offset = torso_w*0.18;
     difference() {
-        // Disc with rounded top edge
-        hull() {
-            translate([0,0,1]) cylinder(d=base_d, h=base_h-2);
-            translate([0,0,base_h-1]) cylinder(d=base_d-3, h=0.5);
-            translate([0,0,1]) cylinder(d=base_d, h=0.1);
-            translate([0,0,0.5]) cylinder(d=base_d-1, h=0.1);
-        }
+        // Flat rectangular plate with rounded corners
+        linear_extrude(height=base_h, convexity=4)
+            offset(r=base_corner_r) offset(r=-base_corner_r)
+                square([base_w, base_l], center=true);
         // Foot recesses — shallow ovals where the monkey's feet sit
-        for (s=[-1,1]) translate([s*foot_recess_offset, 4, base_h - base_foot_recess + 0.1])
+        for (s=[-1,1]) translate([s*foot_recess_offset, 0, base_h - base_foot_recess + 0.1])
             scale([1, 1.5, 1]) cylinder(d=26, h=base_foot_recess + 1);
-        // USB-C cable notch on side (rear)
-        translate([0, -base_d/2 - 1, base_h/2])
-            rotate([90,0,0]) rotate([0,0,0])
-                rounded_box(base_usb_notch_w, base_usb_notch_h, 10, r=1.5);
-        // Cable channel — from foot recess area to USB notch
-        translate([0, -base_d/4, base_h/2])
+        // USB-C cable notch on rear short edge (neg Y)
+        translate([0, -base_l/2 - 1, base_h/2])
             rotate([90,0,0])
-                cylinder(d=base_usb_notch_h, h=base_d/2, center=false);
-        // Magnet pockets on top to retain monkey (optional)
-        for (s=[-1,1]) translate([s*foot_recess_offset, -4, base_h - 2])
+                rounded_box(base_usb_notch_w, base_usb_notch_h, 10, r=1.5);
+        // Cable channel — from rear edge inward toward foot-recess area
+        translate([0, -base_l/2 + 1, base_h/2])
+            rotate([90,0,0])
+                cylinder(d=base_usb_notch_h, h=base_l - 2, center=false);
+        // Magnet pockets on top to retain monkey
+        for (s=[-1,1]) translate([s*foot_recess_offset, -10, base_h - 2])
             cylinder(d=5.2, h=2.2);
     }
 }

@@ -28,7 +28,7 @@ part = "preview";   // "preview" | "triggered" | "midmotion" | "wall_mockup"
                     // | "eye_board" | "muzzle" | "servo_bracket" | "yoke"
 
 // ---------- DIMENSIONS (~55% of desktop) ----------
-torso_h            = 44;
+torso_h            = 52;                       // raised from 44 → gives mic (39.5 mm) real clearance
 torso_w            = 38;
 torso_d            = 28;
 head_w             = 36;
@@ -62,8 +62,19 @@ keyhole_z          = torso_h * 0.25;
 sg90_body_l        = 23.0;
 sg90_body_w        = 12.2;
 sg90_body_h        = 22.5;
-esp_w              = 28;
-esp_l              = 65;
+// ---------- COMPONENTS (matched to STLs in hardware/components/) ----------
+// MCU: ESP32-C3 Super Mini — 22 × 18 × 8 mm. Only MCU that fits 44 mm torso.
+esp_w              = 22;
+esp_l              = 18;
+esp_h              = 8;
+// I2S mic board (matches hardware/components/microphone.stl) — vertical orientation
+mic_w              = 40;
+mic_d              = 11;
+mic_h              = 20;
+// USB-C breakout (matches hardware/components/usbc.stl)
+usbc_w             = 20;
+usbc_d             = 10;
+usbc_h             = 20;
 shoulder_pin_d     = 2.5;
 tendon_ch_d        = 2.0;
 
@@ -240,7 +251,8 @@ module bottom_plate() {
         rounded_box(24, 20, plate_t, r=3);
         translate([0, 0, -plate_t/2])
             cylinder(d=5.2, h=2.2);
-        translate([0, 0, 0]) rounded_box(11, 6, 4, r=1.5);
+        // Cable bundle cutout — USB-C + mic wires + motor wires going down to hub
+        translate([0, 0, 0]) rounded_box(14, 8, 4, r=1.5);
     }
 }
 
