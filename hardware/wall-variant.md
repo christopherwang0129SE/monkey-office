@@ -1,6 +1,6 @@
-# Wall variant (V1.0-wall) — chat notes summary
+# Wall variant (V1.1-wall) — current production design
 
-Compact wall-mounted variant of Aben, designed under a **4-hour print budget**.
+Compact wall-mounted variant of Aben. V1.1 adds 2-piece articulated arms (hand-on-mouth gesture works), explicit mic_bracket, and external hub for the 60×120 mm motherboard that doesn't fit in the torso.
 
 ## Why it exists
 
@@ -8,15 +8,17 @@ The desktop V0.3 (220 mm standing on a base disc) is a beautiful Bojesen-tribute
 
 ## What changes vs V0.3 desktop
 
-| | V0.3 desktop | **V1.0-wall** |
+| | V0.3 desktop | **V1.1-wall** |
 |---|---|---|
 | Height | 220 mm | ~125 mm (incl. dangling legs) |
 | Stance | Standing on base disc | Hangs from a keyhole on torso back |
-| Total parts | 13 (incl. base disc) | 12 (no base) |
-| Print plates | 2 | **1** |
-| Print time (est.) | ~21 h | **~3.5 h** |
-| Filament | ~310 g | ~55 g |
-| Wall mount | — | Keyhole, 8 mm screw head, 10 mm slot |
+| Total printed parts | 13 (incl. base disc) | **17** (15 monkey + 2 hub) |
+| Print plates | 2 | **2** (monkey on plate 1, hub on plate 2) |
+| Print time (est.) | ~21 h | **~6 h** (3.5h monkey + 2.5h hub) |
+| Filament | ~310 g | **~58 g** |
+| Arms | Single-piece rigid | **2-piece articulated** (hand reaches face) |
+| Electronics housing | All inside torso | Mic + servo in monkey; **MCU in external hub** |
+| Wall mount | — | Keyhole (monkey) + 2 screws (hub) |
 
 ## Files
 
