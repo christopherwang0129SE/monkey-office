@@ -1,6 +1,6 @@
 # Monkey — Industrial Design Brief (V1)
 
-> **Codename:** *Hør-ikke-abe* ("the don't-hear monkey") — a Scandinavian-design office object that covers its eyes when the room gets too loud.
+> **Codename:** *Tys-aben* ("the shush monkey") — a Scandinavian-design office object that covers its own mouth when the room gets too loud. Iwazaru ("speak no evil") adapted as a silent social signal: when the monkey shushes itself, it's telling the room to do the same.
 
 ---
 
@@ -14,7 +14,7 @@ We are **not cloning Bojesen.** This is a tribute that earns its own form by add
 
 1. **The line should smile.** No straight edges, no sharp fillets. Every transition is a radius. If a profile looks "engineered," reshape it.
 2. **Hide the machine.** No visible screws, no exposed cables, no servo horns peeking out. The seam between halves should read as an intentional joint, not an assembly artifact.
-3. **Motion as gesture, not animation.** One slow, considered movement — hands rise to cover eyes over ~1.2s with an ease-in/ease-out curve. Holds for the duration of the noise event. Lowers even slower (~1.8s) as if reluctant to look. No twitching, no servo buzz, no return-to-zero snap.
+3. **Motion as gesture, not animation.** One slow, considered movement — hands rise to cup the mouth over ~1.2s with an ease-in/ease-out curve. The eyes remain visible above the cupped hands — eye-contact is preserved throughout, which is what makes the "shh" land. Holds for the duration of the noise event. Lowers even slower (~1.8s) as if reluctant to release. No twitching, no servo buzz, no return-to-zero snap.
 
 ---
 
@@ -31,7 +31,7 @@ We are **not cloning Bojesen.** This is a tribute that earns its own form by add
 | Head | 70 mm | ~32% of total — slightly oversized vs. naturalistic, in Bojesen tradition. Pure sphere with a flat-cut chin, no neck. |
 | Torso | 80 mm | Barrel-shaped, widest at the chest, tapering to the hips. Houses the servo + ESP32. |
 | Legs (seated) | 70 mm | Folded forward. Feet act as front anchors of the base. |
-| Arm length | 110 mm | Long enough to reach eyes when raised. Two joints (shoulder + elbow), Bojesen-style visible pin joints. |
+| Arm length | 135 mm (~60% of total height) | Bojesen-signature long arms — easily reach the mouth when raised (shorter travel than reaching the eyes, so kinematics is forgiving). Two joints (shoulder + elbow), Bojesen-style visible pin joints. |
 
 ### Silhouette principles
 
@@ -56,7 +56,7 @@ We are **not cloning Bojesen.** This is a tribute that earns its own form by add
 
 A single SG90-class micro servo lives vertically inside the torso, centered on the spine axis. Its horn drives a small yoke. Two non-stretch braided fishing lines (the "tendons") run from the yoke up and out through low-friction PTFE-lined channels printed into the torso, exit at the shoulder pin axis, and terminate inside each upper arm just behind the shoulder joint.
 
-When the servo rotates upward, both tendons shorten symmetrically, rotating both arms about the shoulder pins so the hands sweep upward and inward to cover the eyes. A pair of light return springs (or a single elastic band routed across the chest, Bojesen-style) pulls the arms back down to the resting position when the servo releases.
+When the servo rotates upward, both tendons shorten symmetrically, rotating both arms about the shoulder pins so the hands sweep upward and inward to cup the mouth (the walnut muzzle area). The travel is shorter than reaching the eyes would be, which means less tendon tension, less servo strain, and a more reliable hold at peak. A pair of light return springs (or a single elastic band routed across the chest, Bojesen-style) pulls the arms back down to the resting position when the servo releases.
 
 ### Why this approach
 
@@ -147,7 +147,7 @@ Before signing off any prototype, it must pass all of these:
 - [ ] **Silhouette test:** photograph as black silhouette against white. Should be unmistakably a monkey, unmistakably Bojesen-adjacent, with no part lines visible.
 - [ ] **Hand-feel test:** pick it up. The weight should feel right (target ~250 g — heavy enough to feel solid, light enough to handle). Edges should be sanded to where no seam is felt with closed eyes.
 - [ ] **Idle test:** sit it on a desk for an hour while powered on. It should be completely silent. No fan noise, no servo hum, no LED visible.
-- [ ] **Gesture test:** trigger it ten times. Every motion should feel identical, slow, and intentional. Anyone watching should say "oh, it's covering its eyes," not "oh, a robot moved."
+- [ ] **Gesture test:** trigger it ten times. Every motion should feel identical, slow, and intentional. Anyone watching should say "oh, it's shushing us," not "oh, a robot moved." The eyes should remain fixed on the viewer during the held pose — that's the social-signal moment.
 - [ ] **Aged-friend test:** hand it to someone who doesn't know what it does. They should want to pick it up. If their first reaction is "what does it do?" instead of "oh, hello" — the form has failed.
 
 ---
@@ -166,5 +166,5 @@ Before signing off any prototype, it must pass all of these:
 
 - **Spring vs. elastic return:** two coil springs (cleaner force curve) vs. one woven elastic band routed Bojesen-style across the chest behind the arms (more honest tribute). Need a physical prototype to decide.
 - **Eye-board geometry:** horizontal lozenge (Bojesen) vs. a softer rounded rectangle. Bojesen wins on tribute, but the rounded version may print cleaner.
-- **Hand shape:** Bojesen's hands are simple cylindrical stubs. Should we leave them as stubs (honest), or sculpt a shallow palm-cup so they nest over the eye-board when raised? The cup is more "expressive" but starts to feel cartoonish.
+- **Hand shape:** Bojesen's hands are simple cylindrical stubs. Should we leave them as stubs (honest), or sculpt a shallow palm-cup so they nest gently over the muzzle when raised? The cup is more "expressive" but starts to feel cartoonish. Working assumption: shallow palm-cup with inward wrist tilt — locked in [image-spec.md](image-spec.md).
 - **Sound:** speaker yes/no in V1.1? If yes, where does the grille go without breaking the silhouette? (Candidate: hidden in the seated-pose space between the thighs, firing downward into the desk for a soft diffused sound.)

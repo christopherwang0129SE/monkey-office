@@ -6,9 +6,9 @@
 
 ## TL;DR i én sætning
 
-En ~220 mm høj, 3D-printet **Bojesen-tribute-abe** i wood-fill PLA + linolie, der sidder/står på skrivebordet, lytter via skjult I2S-mik, og **dækker langsomt sine øjne med hænderne** når støj er for høj for længe — drevet af én SG90-servo via skjulte sener.
+En ~220 mm høj, 3D-printet **Bojesen-tribute-abe** i wood-fill PLA + linolie, der står på skrivebordet, lytter via skjult I2S-mik, og **kupper langsomt sine hænder over sin egen mund** når støj er for høj for længe — drevet af én SG90-servo via skjulte sener. Øjnene forbliver synlige over hænderne — øjenkontakten bevares, og det er hvad der får "shh"-gestussen til at lande.
 
-(Bemærk: gesten er nu **hænder-over-øjne** — "hør-ikke-abe" — ikke længere hænder-over-mund som tidligere chat-note antog. Skift sket i [`brief.md`](brief.md).)
+(Bemærk: gesten er **hænder-over-mund** — "Tys-aben" / Iwazaru. Tidligere chat-noter eksperimenterede kortvarigt med hænder-over-øjne, men det blev rullet tilbage: (1) geometrisk umuligt med stive 135 mm arme (se [`../cad/README.md`](../cad/README.md) "The gesture, revised"), og (2) hånd-over-mund er den eneste af Three Wise Monkeys-gestusene der er et direkte social signal til rummet, ikke en beskrivelse af abens egen tilstand.)
 
 ---
 

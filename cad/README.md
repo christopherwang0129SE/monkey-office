@@ -125,13 +125,18 @@ Requires OpenSCAD ≥ 2023. Apple Silicon: `brew install --cask openscad@snapsho
 
 ## The gesture, revised
 
-V0.3 confirms a geometric reality: with rigid 130 mm arms (the Bojesen-correct proportion), the hands **cannot literally cover the eyes**. The hand traces a 130 mm radius circle around the shoulder pivot; the eye is only ~25 mm from the shoulder — the hand always overshoots.
+V0.3 confirmed a geometric reality: with rigid 130–135 mm arms (the Bojesen-correct proportion), the hand traces a long radius around the shoulder pivot, and the **eye** sits only ~25 mm from the shoulder — too close, the hand always overshoots.
 
-Three options:
+The product gesture has therefore been redefined as **hands cupping the mouth** ("Tys-aben" / Iwazaru — *speak no evil*), not the eyes. Three reasons this is the right call, not a compromise:
 
-1. **Embrace the "raised hands" gesture.** When triggered, arms sweep straight up, hands above head. Reads emotionally as *"this is too much"* / *"I throw up my hands."* Honest to the use case (office got too loud), keeps the geometry simple. **Recommended for V0.3.**
-2. **2-piece elastic-articulated arms** (V1.0). Upper arm + forearm joined by elastic. Servo drives the upper arm only; forearm folds passively, hand lands on the face. True Bojesen articulation, more parts, more assembly complexity.
-3. **Move the shoulder pivot to head height.** Makes the gesture literally "covering eyes" possible with a short rigid arm, but breaks the silhouette completely. Don't do this.
+1. **Geometry works.** The muzzle / mouth zone sits roughly 40–50 mm above the shoulder pivot vertically (face below the brow line), and only a few mm off the centerline horizontally. A rigid arm rotated ~75–90° from rest brings the cupped hand into that zone naturally. Far more forgiving than the eye target.
+2. **Concept is stronger.** Hand-over-mouth is the universal "shh" — it's a direct social signal to the room, not a description of the monkey's own state. Hand-over-eyes / hand-over-ears say "I don't want to see / hear this"; hand-over-mouth says "you, be quiet." That's exactly the product's job.
+3. **Eyes stay visible.** With hands over mouth and eyes uncovered above, the monkey maintains eye contact with the viewer during the held pose — and that's what makes the gesture *land* socially. Covered eyes would be passive; visible eyes shushing you is active.
+
+Remaining options if the rigid-arm geometry still doesn't land cleanly on the muzzle in V1 prototyping:
+
+- **2-piece elastic-articulated arms** (V1.0). Upper arm + forearm joined by elastic. Servo drives the upper arm only; forearm folds passively, hand lands precisely on the lower face. True Bojesen articulation, more parts, more assembly complexity. Only adopt if rigid-arm prototype lands "off-target" in a way that breaks the read.
+- **Acceptance of hand-on-face-region.** If a rigid arm puts the hand on the cheek or chin instead of precisely on the muzzle, the gesture may still read as "shh" — the brain interprets cupped hands on the lower face as covering the mouth regardless of pixel-precise alignment. Test with the printed prototype before committing to 2-piece arms.
 
 ## Known open items
 

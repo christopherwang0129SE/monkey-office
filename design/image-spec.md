@@ -138,20 +138,22 @@ ASPECT
 THIS FRAME — FIRST LIFT
 Identical camera, identical background, identical lighting to Frame 1.
 The arms have just begun to rise. Elbows are still low, close to the
-torso. The forearms have rotated upward and inward by perhaps 25
-degrees — hands are now at lower-chest height, palms turning to face
-the eyes. The shoulders show their flowing transition into the
-torso as the geometry shifts. The gesture is slow and deliberate,
-caught at the very start of the motion. Eyes still forward.
+torso. The forearms have rotated upward and inward by perhaps 20
+degrees — hands are now at mid-chest height, palms turning to face
+the lower part of the face (the muzzle / mouth area). The shoulders
+show their flowing transition into the torso as the geometry shifts.
+The gesture is slow and deliberate, caught at the very start of the
+motion. Eyes still forward, attentive.
 
 NARRATIVE BEAT
-Something has changed in the room. The motion has begun.
+Something has changed in the room. The motion has begun — a quiet
+"shh" is on its way.
 
 ASPECT
 1:1
 ```
 
-## Frame 3 — Mid-arc (halfway to the face)
+## Frame 3 — Mid-arc (halfway to the mouth)
 
 ```
 [PASTE MASTER DNA HERE]
@@ -160,35 +162,45 @@ THIS FRAME — MID-ARC
 Identical camera, background, and lighting to Frames 1 and 2. The
 arms are now roughly two-thirds of the way through the motion.
 Elbows held slightly forward of the shoulders (not flared out
-sideways). Forearms angle upward and inward; hands are at neck-and-
-chin height, palm-cups clearly turning toward the face. There is a
-sense of considered, almost reluctant motion. The pin joint at the
-shoulder is visible; the wood grain runs along the arm.
+sideways). Forearms angle upward and inward; hands are at upper-
+chest / lower-chin height, palm-cups clearly turning toward the
+muzzle. There is a sense of considered, almost reluctant motion.
+The pin joint at the shoulder is visible; the wood grain runs along
+the arm.
 
 NARRATIVE BEAT
-The hands are rising toward the face. Slow, deliberate, warm.
+The hands are rising toward the mouth. Slow, deliberate, warm.
 
 ASPECT
 1:1
 ```
 
-## Frame 4 — Peak: covering the eyes (the money shot)
+## Frame 4 — Peak: hands over the mouth (the money shot)
 
 ```
 [PASTE MASTER DNA HERE]
 
-THIS FRAME — PEAK
+THIS FRAME — PEAK ("SHHH")
 Identical camera, background, and lighting to the previous frames.
 The arms have reached their peak position. Both hands are cupped
-gently over the eye-board, palm-cups pressed softly against the
-walnut inset, completely covering the two black bead eyes. Elbows
-held slightly forward of the shoulders, never flared outward. The
-muzzle remains visible just below the cupped hands. The wood-grain
-on the arms catches the light. The pose reads unmistakably as
-"see no evil" but performed with calm dignity — never cartoonish.
+gently over the walnut muzzle insert — covering the entire lower
+half of the face from just below the eye-board down to the chin.
+Palm-cups pressed softly against the face. Elbows held slightly
+forward of the shoulders, never flared outward.
+
+CRUCIAL: the walnut eye-board and the two black bead eyes remain
+fully visible ABOVE the cupped hands. The eyes look directly at
+the viewer — attentive, gently insistent. This is the Iwazaru
+"speak no evil" pose adapted for the office: the monkey is
+silently telling YOU to quiet down. The eye-contact while the
+mouth is covered is what makes the gesture land.
+
+The pose reads with calm dignity, never cartoonish, never
+exaggerated. The wood-grain on the arms catches the light.
 
 NARRATIVE BEAT
-The hero moment. The monkey has covered its eyes. The pose is held.
+The hero moment. The monkey has covered its mouth and is looking
+right at you. The room receives the message.
 
 ASPECT
 1:1
@@ -202,13 +214,14 @@ ASPECT
 THIS FRAME — RETURN
 Identical camera, background, and lighting to the previous frames.
 The arms have lowered back down to roughly the position of Frame 2 —
-hands at lower-chest height, palms still angled inward, elbows just
+hands at mid-chest height, palms still angled inward, elbows just
 beginning to straighten. The motion reads as reluctant release,
-slower than the rise. Eyes once again forward, attentive. The figure
-is on its way back to the patient resting pose.
+slower than the rise. Eyes still forward, attentive — they were
+visible throughout. The figure is on its way back to the patient
+resting pose.
 
 NARRATIVE BEAT
-The room is calm again. The monkey returns to rest.
+The message has been delivered. The monkey returns to rest.
 
 ASPECT
 1:1
@@ -417,7 +430,7 @@ Disse er nu låst på tværs af alle 16 prompter. Skift kun ved bevidst beslutni
 - **Arme:** 135 mm (60% af højden), Bojesen-signaturlange
 - **Arm-hvilevinkel:** ~5° foran hofteline (alert, ikke akavet)
 - **Hænder:** shallow palm-cup med inward wrist tilt
-- **Cover-position:** hænder kuppet direkte over eye-board, palmer presset blødt mod den, albuer let frem
+- **Cover-position:** hænder kuppet over muzzle / nedre halvdel af ansigtet, palmer presset blødt mod den, albuer let frem. Eye-board og øjne forbliver synlige OVER hænderne — øjenkontakt bevares (Iwazaru "shh"-gestus, ikke see-no-evil)
 - **Eye-board:** vandret lozenge ~32×12 mm med faint downward bow (smile-line)
 - **Muzzle:** lille rund valnød-indsats, ~10 mm
 - **Øjne:** 6 mm sorte glasperler i eye-board
@@ -440,8 +453,9 @@ Disse er nu låst på tværs af alle 16 prompter. Skift kun ved bevidst beslutni
 
 Disse vil image gen besvare for os — variér første gang vi genererer Hero, og lås det vinder.
 
-- **Hand-cover-spread:** hænderne dækker tæt sammen (én sammenhængende form) vs. let separerede (to tydelige cups). Sandsynlig vinder: tæt sammen — det er the iconic see-no-evil.
-- **Forearm-vinkel ved peak:** parallelle (begge underarme lodrette) vs. let krydsede (rør den modsatte side af ansigtet). Sandsynlig vinder: parallelle.
+- **Hand-cover-spread ved mund:** hænderne mødes tæt over muzzle (én sammenhængende cup) vs. let separerede (to tydelige cups der lige rører hinanden ved midten). Sandsynlig vinder: tæt sammen — den læser som "shh" på lang afstand.
+- **Forearm-vinkel ved peak:** parallelle (begge underarme symmetriske, lige op) vs. let krydsede (højre underarm krydser foran venstre eller omvendt). Sandsynlig vinder: parallelle — symmetri understøtter den rolige Bojesen-dignitet.
+- **Underansigts-dækning:** hænderne dækker præcis muzzle vs. dækker hele området fra under eye-board til hage. Sandsynlig vinder: dækker området fra under eye-board til hage — mere dækning, klarere gestus, men eye-board forbliver fuldt synligt.
 - **Bokeh-baggrund i story arc:** kontor-bokeh vs. helt ren backdrop. Sandsynlig vinder: meget subtil kontor-bokeh — fortæller historien uden at distrahere.
 
 ---

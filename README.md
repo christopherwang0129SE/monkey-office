@@ -1,6 +1,6 @@
 # Office Monkey — Aben
 
-3D-printet Bojesen-tribute-abe der lytter til kontorets støj og dækker sine øjne ("hør-ikke-abe") når det bliver for højt for længe.
+3D-printet Bojesen-tribute-abe der lytter til kontorets støj og **dækker sin egen mund** ("Tys-aben", Iwazaru-tribute) når det bliver for højt for længe — en stille social-signal til rummet om at tale lavere.
 
 **Status (2026-05-23):** Design + research + sales-strategi dokumenteret. Nul fysiske aber bygget endnu, nul betalende kunder.
 
