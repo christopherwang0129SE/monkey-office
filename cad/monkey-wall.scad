@@ -294,10 +294,26 @@ module upper_arm(side=1) {
         translate([-10, 0, upper_l])
             rotate([0,90,0]) cylinder(d=elbow_pin_d, h=20);
         // Tendon channel — runs the length of the upper arm,
-        // exits the front face just below the elbow so it can be
-        // routed across the joint to the forearm.
+        // offset toward the front-face of the arm
         translate([0, side*2, -1])
-            cylinder(d=tendon_ch_d, h=upper_l - 2);
+            cylinder(d=tendon_ch_d, h=upper_l - 1);
+        // Cross-elbow tendon exit — bored through the elbow knuckle
+        // on the FRONT face. Same tendon continues from here into
+        // the forearm via its matching entry hole. Together these
+        // form a single continuous tendon path that crosses the
+        // hinge joint, so when the servo pulls the tendon BOTH the
+        // upper arm AND the forearm rotate simultaneously.
+        translate([0, 0, upper_l - 2])
+            rotate([-30, 0, 0])
+                cylinder(d=tendon_ch_d + 0.2, h=8);
+        // Return-elastic anchor hole — a small 2 mm hole near the
+        // elbow on the BACK side. A thin sewing elastic is threaded
+        // here, then to a matching hole in the forearm. The elastic
+        // is the passive return spring that pulls the forearm back
+        // to "straight-down" when the servo releases tendon tension.
+        translate([0, -side*3.5, upper_l - 3])
+            rotate([0, 90, 0])
+                cylinder(d=1.8, h=20, center=true);
         // Forearm-clearance slot — flattens the elbow front-face so
         // the forearm's top sphere has room to fold against the upper
         // arm without binding.
@@ -321,14 +337,28 @@ module forearm(side=1) {
         // Elbow pin hole — mates with upper arm's hole
         translate([-10, 0, 0])
             rotate([0,90,0]) cylinder(d=elbow_pin_d, h=20);
-        // Tendon channel — enters near elbow front, runs ~60% down
-        // the forearm to a knot pocket where the line is secured.
-        translate([0, -side*2, 2])
+        // Tendon entry — bored through the proximal end matching the
+        // upper arm's cross-elbow exit. Same tendon continues from
+        // upper arm into forearm via this hole.
+        translate([0, 0, 2])
+            rotate([30, 0, 0])
+                cylinder(d=tendon_ch_d + 0.2, h=8);
+        // Tendon channel — runs down forearm to a knot pocket.
+        // When servo pulls the tendon, this anchor is dragged toward
+        // the elbow, folding the forearm forward against the upper.
+        translate([0, side*2, 4])
             cylinder(d=tendon_ch_d, h=fore_l*0.55);
-        // Knot pocket for tendon termination — small sphere cut-out
-        // so the knot has room to seat.
-        translate([0, -side*2, fore_l*0.55 + 2])
+        // Knot pocket for tendon termination
+        translate([0, side*2, fore_l*0.55 + 4])
             sphere(d=3.5);
+        // Return-elastic anchor hole — matches the upper arm's
+        // anchor hole. A sewing elastic loops between the two,
+        // passing across the back of the elbow joint. When the
+        // forearm rotates forward, this elastic stretches and pulls
+        // the forearm back to its rest position when servo releases.
+        translate([0, -side*3.5, 3])
+            rotate([0, 90, 0])
+                cylinder(d=1.8, h=20, center=true);
         // Upper-arm-clearance — slight bevel at the top-back so the
         // forearm can swing forward freely without scraping the upper.
         translate([0, -6, -2])
@@ -399,6 +429,46 @@ module yoke() {
     }
 }
 
+// ---------------------------------------------------------------------
+// MIC BRACKET — holds the 40 × 11 × 20 mm I2S microphone board
+// vertically at the top of the torso cavity, mic capsule pointing UP
+// into the neck so sound travels acoustically through the neck channel
+// to the mic. Fits between the torso front and back halves; held by
+// friction-clips on the inner walls.
+// ---------------------------------------------------------------------
+
+module mic_bracket() {
+    // Mic dim: mic_w (40) × mic_d (11) × mic_h (20) — orientation is
+    // the LONG axis VERTICAL so the 40 mm fits the torso's interior
+    // height (~48 mm). Bracket is a 3-walled clip with an open back.
+    bw = mic_d + 4;       // bracket width — XY footprint slightly wider than mic
+    bl = mic_h + 4;       // bracket depth
+    bh = mic_w + 2;       // bracket height (mic length)
+    wall_t_bk = 1.5;
+    difference() {
+        // Outer C-shaped clip
+        union() {
+            translate([-bw/2, -bl/2, 0]) cube([wall_t_bk, bl, bh]); // left wall
+            translate([ bw/2 - wall_t_bk, -bl/2, 0]) cube([wall_t_bk, bl, bh]); // right wall
+            translate([-bw/2, -bl/2, 0]) cube([bw, wall_t_bk, bh]); // back wall (closed)
+            // Top retainer cap so mic doesn't slide out upward
+            translate([-bw/2, -bl/2, bh - 2]) cube([bw, bl, 2]);
+            // Bottom retainer foot
+            translate([-bw/2, -bl/2, 0]) cube([bw, bl, 2]);
+        }
+        // Mic-shaped cavity (slightly oversized for fit_loose tolerance)
+        translate([-mic_d/2 - 0.3, -mic_h/2 - 0.3, 2])
+            cube([mic_d + 0.6, mic_h + 0.6, mic_w + 0.6]);
+        // Sound port — hole through the top retainer cap aligned with
+        // the mic's MEMS port (centered)
+        translate([0, 0, bh - 3])
+            cylinder(d=3, h=4);
+        // Wire passage at the bottom for the 4-conductor I2S cable
+        translate([-3, -bl/2 + 0.5, -0.1])
+            cube([6, 3, 3]);
+    }
+}
+
 module servo_bracket() {
     plate_w = sg90_body_w + 10;
     plate_l = sg90_body_l + 8;
@@ -457,10 +527,21 @@ module triggered_preview() {
     for (s=[-1,1])
         translate([s*torso_w*0.20, 0, -torso_h/2 - leg_h + 8])
             color("burlywood") leg(s);
+    // 2-piece arms at peak: upper points forward, forearm folds back-and-up
+    // so hand lands at muzzle level. Fold is NEGATIVE so forearm goes UP
+    // toward face instead of DOWN past chest.
+    upper_l = arm_total_l * 0.5;
+    upper_pitch = -55;
+    upper_inward = 45;
+    fold_angle = 130;
     for (s=[-1,1])
         translate([s*torso_w*0.48, 0, shoulder_local_z])
-            rotate([35, 0, -s*15])
-                color("burlywood") arm_finished(s);
+            rotate([upper_pitch, 0, -s*upper_inward]) {
+                color("burlywood") upper_arm(s);
+                translate([0, 0, upper_l])
+                    rotate([fold_angle, 0, 0])
+                        color("burlywood") forearm(s);
+            }
 }
 
 module midmotion_preview() {
@@ -510,6 +591,7 @@ else if (part == "leg_left")      leg(-1);
 else if (part == "leg_right")     leg(1);
 else if (part == "yoke")          yoke();
 else if (part == "servo_bracket") servo_bracket();
+else if (part == "mic_bracket")   mic_bracket();
 else if (part == "triggered")     triggered_preview();
 else if (part == "midmotion")     midmotion_preview();
 else if (part == "wall_mockup")   wall_mockup();
