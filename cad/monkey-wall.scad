@@ -260,6 +260,85 @@ module bottom_plate() {
 //  ARM
 // =====================================================================
 
+// ---------------------------------------------------------------------
+// 2-PIECE ARM (V1.1) — upper arm + forearm joined at the elbow by a
+// 2 mm pin. Tendon passes through both pieces. When the servo pulls
+// the tendon, BOTH pieces rotate forward simultaneously, folding the
+// arm at the elbow so the hand lands at muzzle height in front of the
+// face — the actual "shh" gesture.
+//
+// At rest, gravity + slight elastic return holds the forearm pointing
+// straight down, making the arm read as a single hanging limb.
+//
+// Parts: upper_arm_left/right + forearm_left/right + arm uses a 2 mm
+// steel pin (15 mm long) at the elbow.
+// ---------------------------------------------------------------------
+
+elbow_pin_d        = 2.2;     // 2 mm pin + clearance
+
+module upper_arm(side=1) {
+    upper_l = arm_total_l * 0.5;       // 37.5 mm for wall
+    difference() {
+        // Tapered upper arm — shoulder ball to elbow knuckle
+        tapered_limb([
+            [0,           14],          // shoulder ball
+            [upper_l*0.2, 15],          // shoulder cap
+            [upper_l*0.5, 13],          // mid-bicep
+            [upper_l*0.8, 12],          // toward elbow
+            [upper_l,     13]           // elbow knuckle (slightly bulb)
+        ]);
+        // Shoulder pin hole — driven by servo via tendon
+        translate([-10, 0, 0])
+            rotate([0,90,0]) cylinder(d=shoulder_pin_d, h=20);
+        // Elbow pin hole — through-bore for the 2 mm hinge pin
+        translate([-10, 0, upper_l])
+            rotate([0,90,0]) cylinder(d=elbow_pin_d, h=20);
+        // Tendon channel — runs the length of the upper arm,
+        // exits the front face just below the elbow so it can be
+        // routed across the joint to the forearm.
+        translate([0, side*2, -1])
+            cylinder(d=tendon_ch_d, h=upper_l - 2);
+        // Forearm-clearance slot — flattens the elbow front-face so
+        // the forearm's top sphere has room to fold against the upper
+        // arm without binding.
+        translate([0, 5, upper_l + 1])
+            cube([16, 8, 6], center=true);
+    }
+}
+
+module forearm(side=1) {
+    fore_l = arm_total_l * 0.5;        // 37.5 mm for wall
+    difference() {
+        // Tapered forearm — elbow knuckle to hand
+        tapered_limb([
+            [0,            13],         // elbow knuckle (matches upper)
+            [fore_l*0.2,   12],
+            [fore_l*0.5,   10],         // slim forearm middle
+            [fore_l*0.8,    9],
+            [fore_l - 5,   11],         // wrist
+            [fore_l,       14]          // hand sphere (palm-cup)
+        ]);
+        // Elbow pin hole — mates with upper arm's hole
+        translate([-10, 0, 0])
+            rotate([0,90,0]) cylinder(d=elbow_pin_d, h=20);
+        // Tendon channel — enters near elbow front, runs ~60% down
+        // the forearm to a knot pocket where the line is secured.
+        translate([0, -side*2, 2])
+            cylinder(d=tendon_ch_d, h=fore_l*0.55);
+        // Knot pocket for tendon termination — small sphere cut-out
+        // so the knot has room to seat.
+        translate([0, -side*2, fore_l*0.55 + 2])
+            sphere(d=3.5);
+        // Upper-arm-clearance — slight bevel at the top-back so the
+        // forearm can swing forward freely without scraping the upper.
+        translate([0, -6, -2])
+            rotate([45, 0, 0])
+                cube([16, 6, 6], center=true);
+    }
+}
+
+// Legacy single-piece arm — kept for backward compatibility and as a
+// reference for renders. Not used in V1.1 build.
 module arm_finished(side=1) {
     difference() {
         tapered_limb([
@@ -423,6 +502,10 @@ else if (part == "torso_back")    torso_back();
 else if (part == "bottom_plate")  bottom_plate();
 else if (part == "arm_left")      arm_finished(-1);
 else if (part == "arm_right")     arm_finished(1);
+else if (part == "upper_arm_left")  upper_arm(-1);
+else if (part == "upper_arm_right") upper_arm(1);
+else if (part == "forearm_left")    forearm(-1);
+else if (part == "forearm_right")   forearm(1);
 else if (part == "leg_left")      leg(-1);
 else if (part == "leg_right")     leg(1);
 else if (part == "yoke")          yoke();
