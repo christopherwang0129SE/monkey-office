@@ -42,6 +42,8 @@
 ### Tekniske assets
 - [`cad/`](cad/) — OpenSCAD parametric source (`monkey.scad`, `monkey-wall.scad`, `hub.scad`)
 - [`stl/`](stl/) — desktop variant STLs; [`stl/wall/`](stl/wall/) — wall variant (15 parts); [`stl/hub/`](stl/hub/) — external hub (2 parts)
+- **[`stl/tys-aben-wall-complete.stl`](stl/tys-aben-wall-complete.stl)** — all 17 wall+hub parts on ONE plate, ready to slice & print
+- **[`stl/tys-aben-desktop-complete.stl`](stl/tys-aben-desktop-complete.stl)** — all 13 desktop parts on ONE plate, ready to slice & print
 - [`prints/`](prints/) — Bambu Studio project files (`.3mf`)
 - [`design/cad-atech-prompt.md`](design/cad-atech-prompt.md) — hyper-detailed prompt for AI-CAD tools
 
@@ -52,7 +54,11 @@
 
 ## Hurtigt at komme i gang
 
-**Vil du printe + samle?** Læs [hardware/PRINT.md](hardware/PRINT.md) + [hardware/ASSEMBLY.md](hardware/ASSEMBLY.md), åbn [prints/aben-wall.3mf](prints/aben-wall.3mf) i Bambu Studio.
+**Vil du printe + samle?**
+- **Hurtigste vej:** download én komplet print-file og åbn i Bambu Studio:
+  - **Wall variant (anbefalet):** [stl/tys-aben-wall-complete.stl](stl/tys-aben-wall-complete.stl) — 17 parts, ~64g, ~6h print, hænger på væg
+  - **Desktop variant:** [stl/tys-aben-desktop-complete.stl](stl/tys-aben-desktop-complete.stl) — 13 parts, ~167g, ~21h print, står på rektangulær base
+- Læs derefter [hardware/PRINT.md](hardware/PRINT.md) for slicer-settings + [hardware/ASSEMBLY.md](hardware/ASSEMBLY.md) for samling
 
 **Vil du flashe firmware?** Læs [firmware/README.md](firmware/README.md), åbn [firmware/tys-aben.ino](firmware/tys-aben.ino) i Arduino IDE.
 
