@@ -1,6 +1,6 @@
 # Noise-Monkey — Sales Strategy v0 (2026-05-23)
 
-**Bygget på:** [research](2026-05-23-noise-monkey-research.md) + [killer USPs deck](2026-05-23-noise-monkey-killer-usps-deck.md).
+**Bygget på:** [research](research.md) + [killer USPs deck](usps.md).
 
 **Status:** Strategi-udkast. Benjamins verificerede facts er **ikke landet i repo'et endnu** (verificeret 2026-05-23: nul Benjamin-commits på nogen branch). Når de lander, kan denne plan revideres på 1-2 punkter — ikke hele strukturen.
 

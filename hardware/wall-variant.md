@@ -20,10 +20,10 @@ The desktop V0.3 (220 mm standing on a base disc) is a beautiful Bojesen-tribute
 
 ## Files
 
-- **CAD source:** [`cad/monkey-wall.scad`](cad/monkey-wall.scad)
-- **STLs:** [`stl/wall/`](stl/wall/) — 12 parts
-- **Bambu Studio project:** [`prints/aben-wall.3mf`](prints/aben-wall.3mf) — all parts on one plate
-- **Renders:** [`stl/wall/_front.png`](stl/wall/_front.png), `_side.png`, `_back.png`, `_iso.png`, `_midmotion.png`, `_triggered.png`, `_wall_mockup.png`
+- **CAD source:** [`../cad/monkey-wall.scad`](../cad/monkey-wall.scad)
+- **STLs:** [`../stl/wall/`](../stl/wall/) — 12 parts
+- **Bambu Studio project:** [`../prints/aben-wall.3mf`](../prints/aben-wall.3mf) — all parts on one plate
+- **Renders:** [`../stl/wall/_front.png`](../stl/wall/_front.png), `_side.png`, `_back.png`, `_iso.png`, `_midmotion.png`, `_triggered.png`, `_wall_mockup.png`
 
 ## Design moves carried over from V0.3
 
@@ -51,7 +51,7 @@ The desktop V0.3 (220 mm standing on a base disc) is a beautiful Bojesen-tribute
 
 ## How to print
 
-1. Open `prints/aben-wall.3mf` in Bambu Studio
+1. Open `../prints/aben-wall.3mf` in Bambu Studio
 2. Confirm your printer (X1C / P1S / A1) is selected
 3. Load 2 filaments: light wood-fill PLA + dark wood-fill PLA (PETG optional for yoke/bracket — they can also be PLA at this small size)
 4. Right-click each part → Filament → assign per part name

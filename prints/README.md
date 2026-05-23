@@ -14,8 +14,8 @@ All 13 STL parts loaded onto two build plates with auto-arranged orientations. O
    - Slot 1: light wood-fill PLA
    - Slot 2: dark wood-fill PLA  *(optional — used only for eye-board + muzzle)*
    - Slot 3: PETG black  *(optional — used only for yoke + servo bracket)*
-4. Right-click each part → **Filament** → assign per the table in [`../PRINT.md`](../PRINT.md).
-5. Apply slicer settings from `../PRINT.md` (or accept Bambu defaults for a generic first print).
+4. Right-click each part → **Filament** → assign per the table in [`../hardware/PRINT.md`](../hardware/PRINT.md).
+5. Apply slicer settings from `../hardware/PRINT.md` (or accept Bambu defaults for a generic first print).
 6. Slice → Send to printer.
 
 ### Plate layouts (auto-arranged)
@@ -25,7 +25,7 @@ All 13 STL parts loaded onto two build plates with auto-arranged orientations. O
 | 1 | head, torso_front, torso_back, arm_left, arm_right, leg_left, leg_right | [plate_1_preview.png](plate_1_preview.png) |
 | 2 | base_disc, bottom_plate, eye_board, muzzle, yoke, servo_bracket | [plate_2_preview.png](plate_2_preview.png) |
 
-You can re-arrange parts onto a single plate if you prefer (some legs/arms may need to be rotated vertical to fit — see [`../PRINT.md`](../PRINT.md) per-part orientation table).
+You can re-arrange parts onto a single plate if you prefer (some legs/arms may need to be rotated vertical to fit — see [`../hardware/PRINT.md`](../hardware/PRINT.md) per-part orientation table).
 
 ### Important: verify per-part orientation before slicing
 

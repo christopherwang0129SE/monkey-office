@@ -1,6 +1,6 @@
 # Noise-Monkey — Killer USPs til præsentation
 
-**Formål:** Slide-klare USP'er der gør produktet til en no-brainer for kontor-chef / HR-lead / office manager. Bygget på research i [2026-05-23-noise-monkey-research.md](2026-05-23-noise-monkey-research.md).
+**Formål:** Slide-klare USP'er der gør produktet til en no-brainer for kontor-chef / HR-lead / office manager. Bygget på research i [research.md](research.md).
 
 **Forudsætning:** Køber er ikke teknisk, har wellness-budget, har modtaget støj-klager, og kan godkende €500-1000 uden indkøbsafdeling. Vi sælger ikke et produkt — vi sælger en *beslutning de gerne vil træffe*.
 

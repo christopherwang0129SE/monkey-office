@@ -1,6 +1,6 @@
 # Overblik — hvordan kommer aben til at se ud?
 
-> Chat-note, 2026-05-23 (sen-eftermiddag). Følger op på den tidligere `gustav-chat-noter.md` "noise-monkey visual design discussion" — dengang fandtes design-spec ikke, og planen var at backward-engineere via nano banana. Designdokumenterne **eksisterer nu** (`design-v1.md`, `design-critique.md`, `PRINT.md`, opdateret `Mokey-product-plan.md`), så denne note destillerer faktisk visuelt overblik fra dem. Hvis dokumenterne ændres, er kilden sandheden.
+> Chat-note, 2026-05-23 (sen-eftermiddag). Følger op på den tidligere [`../chat-notes/2026-05-23-sessions.md`](../chat-notes/2026-05-23-sessions.md) "noise-monkey visual design discussion" — dengang fandtes design-spec ikke, og planen var at backward-engineere via nano banana. Designdokumenterne **eksisterer nu** ([`brief.md`](brief.md), [`critique.md`](critique.md), [`../hardware/PRINT.md`](../hardware/PRINT.md), opdateret [`../hardware/dev-brief.md`](../hardware/dev-brief.md)), så denne note destillerer faktisk visuelt overblik fra dem. Hvis dokumenterne ændres, er kilden sandheden.
 
 ---
 
@@ -8,7 +8,7 @@
 
 En ~220 mm høj, 3D-printet **Bojesen-tribute-abe** i wood-fill PLA + linolie, der sidder/står på skrivebordet, lytter via skjult I2S-mik, og **dækker langsomt sine øjne med hænderne** når støj er for høj for længe — drevet af én SG90-servo via skjulte sener.
 
-(Bemærk: gesten er nu **hænder-over-øjne** — "hør-ikke-abe" — ikke længere hænder-over-mund som tidligere chat-note antog. Skift sket i `design-v1.md`.)
+(Bemærk: gesten er nu **hænder-over-øjne** — "hør-ikke-abe" — ikke længere hænder-over-mund som tidligere chat-note antog. Skift sket i [`brief.md`](brief.md).)
 
 ---
 
@@ -21,7 +21,7 @@ En ~220 mm høj, 3D-printet **Bojesen-tribute-abe** i wood-fill PLA + linolie, d
 
 ### Aktuel status (V0.2) vs. ambition (Bojesen-niveau)
 
-V0.2 er **kompetent organisk figurin** — over hobby-print, men ikke generationelt design endnu. `design-critique.md` navngiver gabet ærligt:
+V0.2 er **kompetent organisk figurin** — over hobby-print, men ikke generationelt design endnu. [`critique.md`](critique.md) navngiver gabet ærligt:
 
 | Punkt | V0.2 nu | Skal være |
 |---|---|---|
@@ -76,11 +76,11 @@ ESP32-S3 (USB-C) • I2S MEMS-mik (INMP441/SPH0645) peger op gennem hals-kavitet
 - 3-fase: (1) valider mekanik på servo-bracket + yoke + bundplade — 1 t. (2) Valider torso-kavitet — 5 t. (3) Færdiggør body — 15 t.
 - **Lemmer printes lodret** → lag-linjer langs lemmet → efter oliering læses som *træåre*.
 - 0.4 mm hærdet stål-dyse. Maks 60 mm/s på wood-fill, ellers klogger.
-- Bambu Studio profile i `PRINT.md`. Renders ligger i `stl/`: `_assembly_front.png`, `_assembly_iso.png`, `_assembly_side.png`, `_triggered.png`.
+- Bambu Studio profile i [`../hardware/PRINT.md`](../hardware/PRINT.md). Renders ligger i `../stl/`: `_assembly_front.png`, `_assembly_iso.png`, `_assembly_side.png`, `_triggered.png`.
 
 ---
 
-## Hvorfor produktet eksisterer (fra `Research.md`)
+## Hvorfor produktet eksisterer (fra [`../product/research.md`](../product/research.md))
 
 - Kognitiv ydeevne -14% i open-plan vs. stille rum
 - Op til -66% produktivitet ved forståelig baggrundssamtale
@@ -96,7 +96,7 @@ Ikke støjmåler/dashboard. Ingen batteri i V1. Ingen hale. Ingen synlige skruer
 
 ---
 
-## Det vigtigste enkelte skift (fra `design-critique.md`)
+## Det vigtigste enkelte skift (fra [`critique.md`](critique.md))
 
 > Hædr motion-øjeblikket som hele grunden til at objektet eksisterer.
 

@@ -6,14 +6,14 @@
 
 ## Quick start
 
-1. Open **Bambu Studio** → File → Open Project → [`prints/aben.3mf`](prints/aben.3mf).
+1. Open **Bambu Studio** → File → Open Project → [`../prints/aben.3mf`](../prints/aben.3mf).
 2. Confirm your printer model (X1C / P1S / A1) is selected, top-right.
 3. Load filaments (see [filament table](#filaments-3-colors) below).
 4. Assign filaments per part (right-click → Filament).
 5. Apply settings from [§ Bambu Studio profile](#bambu-studio-profile-paste-these-values).
 6. Slice → Send to printer.
 
-Plate layouts and per-plate part lists: see [`prints/README.md`](prints/README.md).
+Plate layouts and per-plate part lists: see [`../prints/README.md`](../prints/README.md).
 
 If you'd rather start from STLs, see [§ Manual setup](#manual-setup-without-the-3mf).
 
@@ -48,7 +48,7 @@ If you'd rather start from STLs, see [§ Manual setup](#manual-setup-without-the
 - Print: `head.stl`, `arm_left.stl`, `arm_right.stl`, `leg_left.stl`, `leg_right.stl`, `eye_board.stl`, `muzzle.stl`
 - Goal: complete the sculpture.
 
-If Phase 1 or 2 reveals a fit issue, you adjust `monkey.scad`, re-export only the affected STLs, and re-print without having wasted 18 hours.
+If Phase 1 or 2 reveals a fit issue, you adjust `../cad/monkey.scad`, re-export only the affected STLs, and re-print without having wasted 18 hours.
 
 ---
 
@@ -133,7 +133,7 @@ The wood fibres in wood-fill PLA absorb the oil and develop a real wood patina. 
 If you'd rather build the print plate yourself:
 
 1. Open Bambu Studio, select your printer.
-2. File → Import → select all 13 `.stl` files from `stl/`.
+2. File → Import → select all 13 `.stl` files from `../stl/`.
 3. Apply the orientations from the per-part table above (right-click → Lay flat, or use the rotate tool).
 4. Apply the filament assignment: light wood for body parts, dark wood for eye_board + muzzle, PETG for yoke + servo_bracket.
 5. Apply profile settings from the table above.
@@ -151,7 +151,7 @@ If you'd rather build the print plate yourself:
 | Torso halves don't meet at seam | Print warp on tall thin walls | Increase brim to 6 mm; ensure bed is enclosed/heated |
 | Arms snap at shoulder | Layer adhesion weak | Print arms vertically (shoulder down) — layer lines should run along the arm, not across it |
 | Magnets don't seat in bottom plate | Hole slightly tight | Drill 5.2 mm pocket to 5.5 mm after print |
-| SG90 doesn't fit in bracket | Tolerance variation | Sand bracket cradle walls; or edit `sg90_body_w/l` in `monkey.scad` +0.4 mm and re-export |
+| SG90 doesn't fit in bracket | Tolerance variation | Sand bracket cradle walls; or edit `sg90_body_w/l` in `../cad/monkey.scad` +0.4 mm and re-export |
 
 ---
 

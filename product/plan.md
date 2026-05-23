@@ -10,7 +10,7 @@ A 3D-printed desk monkey that measures ambient sound (dB) and physically covers 
 
 ## Tasks (artifacts to produce)
 
-- ✅ **Business outcome research facts** — see [2026-05-23-noise-monkey-research.md](2026-05-23-noise-monkey-research.md) (research + USP shortlist). Owner: Benjamin to verify primary-source numbers before customer-facing use.
+- ✅ **Business outcome research facts** — see [research.md](research.md) (research + USP shortlist). Owner: Benjamin to verify primary-source numbers before customer-facing use.
 - **Pure product plan** — owner: Gustav
 
 ---
@@ -19,7 +19,7 @@ A 3D-printed desk monkey that measures ambient sound (dB) and physically covers 
 
 - [ ] Product planning
 - [ ] Product design
-- [x] Research USP → turn into a sales weapon — see [killer USPs deck](2026-05-23-noise-monkey-killer-usps-deck.md)
+- [x] Research USP → turn into a sales weapon — see [killer USPs deck](usps.md)
 
 **Exit criteria for Fase 1:** USP is articulated as a one-line claim a salesperson can lead a cold-call with, and the product spec is concrete enough that build can start in Fase 2 without further design loops.
 
